@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
 jobs:
   build:
     # Bắt buộc phải dùng macos-latest để build source iOS (Xcode),
@@ -26,7 +28,7 @@ jobs:
           git config --global user.email "bot@bot.com"
           git add build.log
           git commit -m "log" || true
-          git push || true
+          git push
       
       - name: Prepare eSign ready IPA
         run: |
@@ -38,5 +40,6 @@ jobs:
         with:
           name: OGIOS-Unsigned-IPA
           path: build/HYper-Regedit-Key-Enabled-unsigned.ipa
+
 
 
