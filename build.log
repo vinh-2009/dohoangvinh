@@ -10,7 +10,76 @@ Build settings from command line:
 --- xcodebuild: WARNING: Using the first of multiple matching destinations:
 { platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
 { platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
-{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:a86baf7551e8f415749dff4576c209e3d37d765f, name:My Mac }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:a0fef81894eff66cd80e1550f62619d6bab74d4e, name:My Mac }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:3F853DC5-005E-4601-ACD8-6DADCBC2DEBC, OS:26.2, name:Apple Vision Pro }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:BEBDC056-2028-499A-A128-A4346BD64217, OS:26.4.1, name:Apple Vision Pro }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:70D84F7E-3446-4AFC-82DC-7AC727F31257, OS:26.5, name:Apple Vision Pro }
+{ platform:iOS Simulator, arch:arm64, id:FA28F45E-187C-4D8F-B9A6-B6DF706CBD1D, OS:26.2, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:FA28F45E-187C-4D8F-B9A6-B6DF706CBD1D, OS:26.2, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:7AAAEF7F-4ABB-416E-A374-4E08CAF6D297, OS:26.4.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:7AAAEF7F-4ABB-416E-A374-4E08CAF6D297, OS:26.4.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:87CFFFAE-2BAE-496D-9B2D-3249B9B4CFBA, OS:26.5, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:87CFFFAE-2BAE-496D-9B2D-3249B9B4CFBA, OS:26.5, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:EB7D7CC3-7982-4506-A383-843BB8467C05, OS:26.2, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:EB7D7CC3-7982-4506-A383-843BB8467C05, OS:26.2, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:7F4AB63A-79BC-4B39-9021-1CB5F457C601, OS:26.4.1, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:7F4AB63A-79BC-4B39-9021-1CB5F457C601, OS:26.4.1, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:CD273885-3D56-471B-AD88-07FFF01EA675, OS:26.5, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:CD273885-3D56-471B-AD88-07FFF01EA675, OS:26.5, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:CD71493D-5602-4D0A-9D2C-91766B2BFF81, OS:26.2, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:CD71493D-5602-4D0A-9D2C-91766B2BFF81, OS:26.2, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:276D9B17-03F8-4009-9233-0AC491CF464F, OS:26.4.1, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:276D9B17-03F8-4009-9233-0AC491CF464F, OS:26.4.1, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:2390FFDB-6478-4BAD-8541-4DAD346BEF11, OS:26.5, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:2390FFDB-6478-4BAD-8541-4DAD346BEF11, OS:26.5, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:A30A2DD1-DB1C-4D3B-9B8B-B422C02CC2CF, OS:26.2, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:A30A2DD1-DB1C-4D3B-9B8B-B422C02CC2CF, OS:26.2, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:6A1D88F3-F58D-43EC-A7DB-764E2EFD4814, OS:26.4.1, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:6A1D88F3-F58D-43EC-A7DB-764E2EFD4814, OS:26.4.1, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:468B2CC0-4D14-42A4-A7FB-B750EF6E38D1, OS:26.5, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:468B2CC0-4D14-42A4-A7FB-B750EF6E38D1, OS:26.5, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:34A60270-E8F0-4906-B0EC-34347C86EBAF, OS:26.2, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:34A60270-E8F0-4906-B0EC-34347C86EBAF, OS:26.2, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:B385244C-CB83-424B-92FD-32C1867E3F14, OS:26.4.1, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:B385244C-CB83-424B-92FD-32C1867E3F14, OS:26.4.1, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:A2011F14-88A1-46AA-999A-FD6FEDCD870B, OS:26.5, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:A2011F14-88A1-46AA-999A-FD6FEDCD870B, OS:26.5, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:20D070A5-D498-4E2F-BAE9-4A54D5F77DBB, OS:26.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:20D070A5-D498-4E2F-BAE9-4A54D5F77DBB, OS:26.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:14DA5CF4-2301-414C-B814-97478EBD9560, OS:26.4.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:14DA5CF4-2301-414C-B814-97478EBD9560, OS:26.4.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:1E926EE8-2A0B-4C47-B835-0C52B77DE728, OS:26.5, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:1E926EE8-2A0B-4C47-B835-0C52B77DE728, OS:26.5, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:A3615395-EDA9-4A60-982A-D428BCC5719B, OS:26.2, name:iPhone 16e }
+{ platform:iOS Simulator, arch:x86_64, id:A3615395-EDA9-4A60-982A-D428BCC5719B, OS:26.2, name:iPhone 16e }
+{ platform:iOS Simulator, arch:arm64, id:25B395EC-01B8-4FB6-8D2A-1C484C360481, OS:26.2, name:iPhone 17 }
+{ platform:iOS Simulator, arch:x86_64, id:25B395EC-01B8-4FB6-8D2A-1C484C360481, OS:26.2, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:7D16E67F-1E34-43CB-BD36-B95CCE24981A, OS:26.4.1, name:iPhone 17 }
+{ platform:iOS Simulator, arch:x86_64, id:7D16E67F-1E34-43CB-BD36-B95CCE24981A, OS:26.4.1, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:88931AEA-62E6-447F-8697-DCE00A671384, OS:26.5, name:iPhone 17 }
+{ platform:iOS Simulator, arch:x86_64, id:88931AEA-62E6-447F-8697-DCE00A671384, OS:26.5, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:5FEB61C5-E3F5-471D-AE23-8A07438D5E92, OS:26.2, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:5FEB61C5-E3F5-471D-AE23-8A07438D5E92, OS:26.2, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:4E3A6BB3-F417-4829-8DF5-0EA652541F40, OS:26.4.1, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:4E3A6BB3-F417-4829-8DF5-0EA652541F40, OS:26.4.1, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:22452A91-4697-4369-8812-53ADB77EB73B, OS:26.5, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:22452A91-4697-4369-8812-53ADB77EB73B, OS:26.5, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:BA9128D4-18C1-4D81-8EB6-C9DEA307B16B, OS:26.2, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:BA9128D4-18C1-4D81-8EB6-C9DEA307B16B, OS:26.2, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:E3357B30-270D-49D5-87E0-79A796ACE8A3, OS:26.4.1, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:E3357B30-270D-49D5-87E0-79A796ACE8A3, OS:26.4.1, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:841190F6-F927-4F0D-B152-62A06B4040CA, OS:26.5, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:841190F6-F927-4F0D-B152-62A06B4040CA, OS:26.5, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:B8094BA5-47C4-4A9C-B87E-C73669585F82, OS:26.4.1, name:iPhone 17e }
+{ platform:iOS Simulator, arch:x86_64, id:B8094BA5-47C4-4A9C-B87E-C73669585F82, OS:26.4.1, name:iPhone 17e }
+{ platform:iOS Simulator, arch:arm64, id:DF686390-8E1F-46B8-A4D9-883644620714, OS:26.5, name:iPhone 17e }
+{ platform:iOS Simulator, arch:x86_64, id:DF686390-8E1F-46B8-A4D9-883644620714, OS:26.5, name:iPhone 17e }
+{ platform:iOS Simulator, arch:arm64, id:A1194899-F789-4C4B-A9E2-EFDC6C72EB35, OS:26.2, name:iPhone Air }
+{ platform:iOS Simulator, arch:x86_64, id:A1194899-F789-4C4B-A9E2-EFDC6C72EB35, OS:26.2, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:3679014C-ECDC-4161-96E5-69B96F640760, OS:26.4.1, name:iPhone Air }
+{ platform:iOS Simulator, arch:x86_64, id:3679014C-ECDC-4161-96E5-69B96F640760, OS:26.4.1, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:CB15797E-6053-40B1-BB72-7F30D005A4F2, OS:26.5, name:iPhone Air }
+{ platform:iOS Simulator, arch:x86_64, id:CB15797E-6053-40B1-BB72-7F30D005A4F2, OS:26.5, name:iPhone Air }
 note: Using codesigning identity override: 
 ComputePackagePrebuildTargetDependencyGraph
 
@@ -45,8 +114,8 @@ ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/X
 
 ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
 
-Build description signature: 46be040749edc747c497113b895a4d3b
-Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/XCBuildData/46be040749edc747c497113b895a4d3b.xcbuilddata
+Build description signature: 2b639e0679262e55238fd5f82f4d2d96
+Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/XCBuildData/2b639e0679262e55238fd5f82f4d2d96.xcbuilddata
 CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation
     cd /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive.xcodeproj
     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation
@@ -164,9 +233,6 @@ MkDir /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakp
 GenerateAssetSymbols /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets (in target 'OGIOS' from project 'ThreeOneOSFive')
     cd /Users/runner/work/dohoangvinh/dohoangvinh
     /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets --compile /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation/Applications/OGIOS.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_dependencies --output-partial-info-plist /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_generated_info.plist --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 16.0 --platform iphoneos --bundle-identifier com.apple.mobile.MobileHouseArrest --generate-swift-asset-symbols /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources/GeneratedAssetSymbols-Index.plist
-/* com.apple.actool.document.warnings */
-/Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets:./AppIcon.appiconset/[ios][universal][1024x1024][][][][][][][]: warning: AppIcon.appiconset/AppIcon-1024.png is 790x316 but should be 1024x1024.
-/Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets:./AppIcon.appiconset/[ios][universal][1024x1024][][][][][][][]: warning: AppIcon.appiconset/AppIcon-1024.png is 790x316 but should be 1024x1024.
 /* com.apple.actool.compilation-results */
 /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources/GeneratedAssetSymbols-Index.plist
 /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources/GeneratedAssetSymbols.h
@@ -268,19 +334,17 @@ CopyStringsFile /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive
 CompileAssetCatalogVariant thinned /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation/Applications/OGIOS.app /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets (in target 'OGIOS' from project 'ThreeOneOSFive')
     cd /Users/runner/work/dohoangvinh/dohoangvinh
     /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets --compile /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 16.0 --platform iphoneos
-/* com.apple.actool.errors */
-/Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets: error: The stickers icon set, app icon set, or icon stack named "AppIcon" did not have any applicable content.
-/* com.apple.actool.document.warnings */
-/Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets:./AppIcon.appiconset/[ios][universal][1024x1024][][][][][][][]: warning: AppIcon.appiconset/AppIcon-1024.png is 790x316 but should be 1024x1024.
-/Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets:./AppIcon.appiconset/[ios][universal][1024x1024][][][][][][][]: warning: AppIcon.appiconset/AppIcon-1024.png is 790x316 but should be 1024x1024.
-/* com.apple.actool.compilation-results */
-/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_generated_info.plist_thinned
 
+SwiftDriver OGIOS normal arm64 com.apple.xcode.tools.swift.compiler (in target 'OGIOS' from project 'ThreeOneOSFive')
+    cd /Users/runner/work/dohoangvinh/dohoangvinh
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name OGIOS -O -whole-module-optimization @/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/Objects-normal/arm64/OGIOS.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -target arm64-apple-ios16.0 -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/BuildProductsPath/Release-iphoneos -F /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/BuildProductsPath/Release-iphoneos -emit-localized-strings -emit-localized-strings-path /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/Objects-normal/arm64 -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/Objects-normal/arm64/OGIOS-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/Objects-normal/arm64/OGIOS.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/Objects-normal/arm64/OGIOS_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/OGIOS-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/OGIOS-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/OGIOS-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/OGIOS-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/BuildProductsPath/Release-iphoneos/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/Objects-normal/arm64/OGIOS-Swift.h -import-objc-header /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/ThreeOneOSFive-Bridging-Header.h -working-directory /Users/runner/work/dohoangvinh/dohoangvinh -no-emit-module-separately-wmo
 
+error: unexpected service error: The Xcode build system has crashed. Build again to continue.
 ** ARCHIVE FAILED **
 
 
 The following build commands failed:
 	CompileAssetCatalogVariant thinned /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation/Applications/OGIOS.app /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets (in target 'OGIOS' from project 'ThreeOneOSFive')
+	SwiftDriver OGIOS normal arm64 com.apple.xcode.tools.swift.compiler (in target 'OGIOS' from project 'ThreeOneOSFive')
 	Archiving project ThreeOneOSFive with scheme OGIOS
-(2 failures)
+(3 failures)
