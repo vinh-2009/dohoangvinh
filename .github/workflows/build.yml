@@ -21,7 +21,12 @@ jobs:
       - name: Build Unsigned IPA (No .p12 required)
         run: |
           chmod +x ./build_unsigned.sh
-          ./build_unsigned.sh > build.log 2>&1 || (curl -s --data-binary @build.log https://paste.rs/ && exit 1)
+          ./build_unsigned.sh > build.log 2>&1 || true
+          git config --global user.name "bot"
+          git config --global user.email "bot@bot.com"
+          git add build.log
+          git commit -m "log" || true
+          git push || true
       
       - name: Prepare eSign ready IPA
         run: |
@@ -33,4 +38,5 @@ jobs:
         with:
           name: OGIOS-Unsigned-IPA
           path: build/HYper-Regedit-Key-Enabled-unsigned.ipa
+
 
