@@ -9,13 +9,14 @@ permissions:
   contents: write
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-latest
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
       
       - name: Build Unsigned IPA (No .p12 required)
         run: |
+          xcodebuild -version
           chmod +x ./build_unsigned.sh
           ./build_unsigned.sh > build.log 2>&1
           
@@ -38,4 +39,5 @@ jobs:
         with:
           name: OGIOS-Unsigned-IPA
           path: build/HYper-Regedit-Key-Enabled-unsigned.ipa
+
 
