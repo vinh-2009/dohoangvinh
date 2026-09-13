@@ -9,26 +9,24 @@ permissions:
   contents: write
 jobs:
   build:
-    # Bắt buộc phải dùng macos-latest để build source iOS (Xcode),
-    # nhưng bạn KHÔNG cần sở hữu máy Mac thật, GitHub Actions sẽ tự lo.
     runs-on: macos-latest
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
       
-      - name: Setup Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with: { xcode-version: latest-stable }
-      
       - name: Build Unsigned IPA (No .p12 required)
         run: |
           chmod +x ./build_unsigned.sh
-          ./build_unsigned.sh > build.log 2>&1 || true
+          ./build_unsigned.sh > build.log 2>&1
+          
+      - name: Upload log on failure
+        if: failure()
+        run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
           git add build.log
-          git commit -m "log" || true
-          git push
+          git commit -m "update log" || true
+          git push || true
       
       - name: Prepare eSign ready IPA
         run: |
@@ -40,6 +38,3 @@ jobs:
         with:
           name: OGIOS-Unsigned-IPA
           path: build/HYper-Regedit-Key-Enabled-unsigned.ipa
-
-
-
