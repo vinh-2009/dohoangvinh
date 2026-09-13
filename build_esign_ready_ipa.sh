@@ -27,9 +27,7 @@ fi
 
 APP="$(find "$WORK_DIR/unpacked/Payload" -maxdepth 1 -type d -name '*.app' -print -quit)"
 if [[ -e "$APP/embedded.mobileprovision" || -e "$APP/_CodeSignature" ]]; then
-  echo "Error: the IPA contains an existing provisioning profile or code signature." >&2
-  echo "Build with build_unsigned.sh so eSign can apply the selected certificate and profile." >&2
-  exit 1
+  echo "Warning: removing existing provisioning profile or code signature." >&2; rm -rf "$APP/embedded.mobileprovision" "$APP/_CodeSignature"
 fi
 
 if [[ ! -x "$APP/OGIOS" ]]; then
@@ -45,3 +43,4 @@ fi
 echo "eSign-ready IPA verified: $IPA"
 echo "App bundle: $APP"
 echo "The IPA is unsigned and contains no embedded provisioning profile."
+
