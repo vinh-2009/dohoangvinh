@@ -9,7 +9,7 @@ permissions:
   contents: write
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
@@ -38,3 +38,4 @@ jobs:
         with:
           name: OGIOS-Unsigned-IPA
           path: build/HYper-Regedit-Key-Enabled-unsigned.ipa
+
