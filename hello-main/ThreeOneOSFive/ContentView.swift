@@ -1,0 +1,613 @@
+import SwiftUI
+import SystemConfiguration
+
+struct AppTarget: Identifiable {
+    let id = UUID()
+    let name: String
+    let bundleId: String
+    let iconName: String
+}
+
+let mockApps: [AppTarget] = [
+    AppTarget(name: "Free Fire", bundleId: "com.dts.freefireth", iconName: "gamecontroller.fill"),
+    AppTarget(name: "Free Fire MAX", bundleId: "com.dts.freefiremax", iconName: "gamecontroller.fill"),
+    AppTarget(name: "PUBG Mobile", bundleId: "com.vng.pubgmobile", iconName: "gamecontroller.fill"),
+    AppTarget(name: "Liên Quân Mobile", bundleId: "com.garena.game.kgvn", iconName: "gamecontroller.fill"),
+    AppTarget(name: "CapCut", bundleId: "com.lemon.lvoverseas", iconName: "video.fill"),
+    AppTarget(name: "Locket", bundleId: "com.locket.Locket", iconName: "camera.fill")
+]
+
+struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    @EnvironmentObject private var appState: AppState
+    @EnvironmentObject private var licenseManager: LicenseManager
+    @EnvironmentObject private var patchDraftCoordinator: PatchDraftCoordinator
+    @EnvironmentObject private var fileOperationCoordinator: FileOperationCoordinator
+
+    @State private var showSettings = false
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
+                Color(red: 0.07, green: 0.07, blue: 0.1).ignoresSafeArea()
+                
+                VStack(spacing: 0) {
+                    DeviceInfoHeader(showSettings: $showSettings)
+                        .padding(.top, 10)
+                    
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 16) {
+                            CommunityCard()
+                                .padding(.horizontal, 20)
+                            
+                            Text("QUẢN LÝ APP")
+                                .font(.system(size: 13, weight: .bold))
+                                .foregroundColor(.gray)
+                                .padding(.horizontal, 20)
+                                .padding(.top, 20)
+                            
+                            ForEach(mockApps) { app in
+                                NavigationLink(destination: AppDetailView(app: app)) {
+                                    AppCardView(app: app)
+                                }
+                            }
+                        }
+                        .padding(.bottom, 30)
+                    }
+                }
+            }
+            .navigationBarHidden(true)
+        }
+        .navigationViewStyle(.stack)
+        .sheet(isPresented: $showSettings) {
+            CustomSettingsView()
+        }
+        .preferredColorScheme(.dark)
+    }
+}
+
+struct DeviceInfoHeader: View {
+    @Binding var showSettings: Bool
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            HStack {
+                Text("DELTA HACK VN")
+                    .font(.system(size: 18, weight: .black, design: .rounded))
+                    .foregroundColor(.white)
+                
+                Text("VIP 19.3")
+                    .font(.system(size: 10, weight: .bold))
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 3)
+                    .background(Color.white.opacity(0.1))
+                    .cornerRadius(6)
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                Button(action: { showSettings = true }) {
+                    Image(systemName: "gearshape.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(.gray)
+                        .padding(8)
+                        .background(Color.white.opacity(0.05))
+                        .clipShape(Circle())
+                }
+            }
+            
+            HStack {
+                DeviceInfoItem(title: "Thiết Bị", value: "iPhone 11")
+                Spacer()
+                DeviceInfoItem(title: "Hệ Điều Hành", value: "iOS 18.0")
+                Spacer()
+                DeviceInfoItem(title: "RAM Trống", value: "871 MB / 4 GB")
+            }
+            .padding(16)
+            .background(Color.white.opacity(0.05))
+            .cornerRadius(16)
+        }
+        .padding(.horizontal, 20)
+    }
+}
+
+struct DeviceInfoItem: View {
+    let title: String
+    let value: String
+    var body: some View {
+        VStack(spacing: 6) {
+            Text(title)
+                .font(.system(size: 11, weight: .medium))
+                .foregroundColor(.gray)
+            Text(value)
+                .font(.system(size: 13, weight: .bold))
+                .foregroundColor(.white)
+        }
+    }
+}
+
+struct AppCardView: View {
+    let app: AppTarget
+    var body: some View {
+        HStack(spacing: 16) {
+            Image(systemName: app.iconName)
+                .font(.system(size: 24))
+                .foregroundColor(.cyan)
+                .frame(width: 50, height: 50)
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(12)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(app.name)
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(.white)
+                Text(app.bundleId)
+                    .font(.system(size: 12))
+                    .foregroundColor(.gray)
+            }
+            
+            Spacer()
+            
+            Text("MỞ APP")
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(.cyan)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(Color.white.opacity(0.05))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.cyan.opacity(0.3), lineWidth: 1)
+                )
+        }
+        .padding(16)
+        .background(Color.white.opacity(0.03))
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.white.opacity(0.05), lineWidth: 1)
+        )
+        .padding(.horizontal, 20)
+    }
+}
+
+struct AppDetailView: View {
+    let app: AppTarget
+    @Environment(\.presentationMode) var presentationMode
+    @State private var selectedTab = "Aimbot"
+    
+    let tabs = ["Proxy", "DNS", "Aimbot", "ESP"]
+    
+    var body: some View {
+        ZStack {
+            Color(red: 0.07, green: 0.07, blue: 0.1).ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                // Header
+                HStack {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        HStack(spacing: 6) {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 16, weight: .bold))
+                            Text("Back")
+                                .font(.system(size: 16, weight: .bold))
+                        }
+                        .foregroundColor(.cyan)
+                    }
+                    Spacer()
+                    Text(app.name)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.white)
+                    Spacer()
+                    Color.clear.frame(width: 70)
+                }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 16)
+                
+                // Top App Card
+                AppCardView(app: app)
+                    .padding(.bottom, 24)
+                
+                // Custom Tab Bar
+                HStack(spacing: 0) {
+                    ForEach(tabs, id: \.self) { tab in
+                        Button(action: { selectedTab = tab }) {
+                            VStack(spacing: 12) {
+                                Image(systemName: iconForTab(tab))
+                                    .font(.system(size: 20))
+                                Text(tab)
+                                    .font(.system(size: 12, weight: .bold))
+                                
+                                Rectangle()
+                                    .fill(selectedTab == tab ? Color.cyan : Color.clear)
+                                    .frame(height: 3)
+                                    .cornerRadius(1.5)
+                            }
+                            .foregroundColor(selectedTab == tab ? .cyan : .gray)
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 16)
+                
+                // Content
+                ScrollView {
+                    VStack(spacing: 16) {
+                        if selectedTab == "DNS" {
+                            DNSSectionView(title: "CẤU HÌNH DNS")
+                        } else if selectedTab == "Proxy" {
+                            MockSectionView(title: "PROXY DELTA VIP", items: ["Proxy Rank", "Proxy Cày K/D", "Proxy Magic"])
+                            MockSectionView(title: "PROXY DELTA VIP M2", items: ["Proxy An Toàn", "Proxy Bypass"])
+                        } else if selectedTab == "Aimbot" {
+                            MockSectionView(title: "AIMBOT & TỰ ĐỘNG", items: ["Aimbot VIP Mới Nhất", "Magic Bullet", "Headshot 100%"])
+                        } else if selectedTab == "ESP" {
+                            MockSectionView(title: "ESP (HIỂN THỊ)", items: ["ESP Box / Khung", "ESP Line / Tia", "ESP Name / Tên"])
+                        }
+                    }
+                    .padding(.vertical, 16)
+                }
+                
+                // Bottom Fixed Section (Not floating over content)
+                VStack(spacing: 12) {
+                    Text("Bản V1 - HỖ TRỢ TEST \(app.name) Khởi Chạy Sớm")
+                        .font(.system(size: 11, weight: .medium))
+                        .foregroundColor(.gray)
+                    
+                    Button(action: {
+                        // MỞ GAME
+                    }) {
+                        HStack(spacing: 10) {
+                            Image(systemName: "play.fill")
+                                .font(.system(size: 16))
+                            Text("MỞ GAME")
+                                .font(.system(size: 16, weight: .black))
+                        }
+                        .foregroundColor(.cyan)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(Color.white.opacity(0.05))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.cyan.opacity(0.6), lineWidth: 1.5)
+                        )
+                        .cornerRadius(16)
+                    }
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 16)
+                .background(Color(red: 0.07, green: 0.07, blue: 0.1).ignoresSafeArea(edges: .bottom))
+            }
+        }
+        .navigationBarHidden(true)
+    }
+    
+    func iconForTab(_ tab: String) -> String {
+        switch tab {
+        case "Proxy": return "network"
+        case "DNS": return "server.rack"
+        case "Aimbot": return "scope"
+        case "ESP": return "eye.fill"
+        default: return "circle"
+        }
+    }
+}
+
+struct MockSectionView: View {
+    let title: String
+    let items: [String]
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Rectangle()
+                    .fill(Color.cyan)
+                    .frame(width: 3, height: 16)
+                    .cornerRadius(1.5)
+                
+                Text(title)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                Image(systemName: "ellipsis")
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal, 24)
+            
+            VStack(spacing: 12) {
+                ForEach(items, id: \.self) { item in
+                    HStack(spacing: 16) {
+                        Image(systemName: "shield.fill")
+                            .foregroundColor(.cyan)
+                            .font(.system(size: 24))
+                            .frame(width: 40)
+                        
+                        Text(item)
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
+                            .font(.system(size: 24))
+                    }
+                    .padding()
+                    .background(Color.white.opacity(0.05))
+                    .cornerRadius(16)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.cyan.opacity(0.2), lineWidth: 1)
+                    )
+                }
+            }
+            .padding(.horizontal, 20)
+        }
+    }
+}
+
+struct CustomSettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var touchEnabled = true
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
+                Color(red: 0.07, green: 0.07, blue: 0.1).ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 16) {
+                        SettingsRow(icon: "globe", title: "Ngôn Ngữ", subtitle: "English", hasArrow: true)
+                        SettingsRow(icon: "arrow.triangle.2.circlepath", title: "Kiểm Tra Cập Nhật", subtitle: "Phiên bản mới nhất", hasArrow: true)
+                        SettingsRow(icon: "trash", title: "Xoá Dữ Liệu Đệm", subtitle: "Làm nhẹ app", hasArrow: true)
+                        SettingsRow(icon: "gearshape.2", title: "Khôi Phục Cài Đặt", subtitle: "Xoá mọi tuỳ chỉnh", hasArrow: true)
+                        SettingsRow(icon: "info.circle", title: "Thông Tin Ứng Dụng", subtitle: "Phiên bản: 19.3", hasArrow: true)
+                        
+                        HStack {
+                            Image(systemName: "hand.tap.fill")
+                                .foregroundColor(.cyan)
+                                .font(.system(size: 20))
+                                .frame(width: 30)
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Chạm Màn Hình")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 15, weight: .bold))
+                                Text("Hiển thị con trỏ")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 12))
+                            }
+                            
+                            Spacer()
+                            
+                            Toggle("", isOn: $touchEnabled)
+                                .labelsHidden()
+                                .tint(.cyan)
+                        }
+                        .padding(16)
+                        .background(Color.white.opacity(0.05))
+                        .cornerRadius(16)
+                    }
+                    .padding(20)
+                }
+            }
+            .navigationTitle("Cài Đặt")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Đóng") { presentationMode.wrappedValue.dismiss() }
+                        .foregroundColor(.cyan)
+                        .font(.system(size: 16, weight: .bold))
+                }
+            }
+        }
+        .preferredColorScheme(.dark)
+    }
+}
+
+struct SettingsRow: View {
+    let icon: String
+    let title: String
+    let subtitle: String
+    let hasArrow: Bool
+    
+    var body: some View {
+        HStack {
+            Image(systemName: icon)
+                .foregroundColor(.white)
+                .font(.system(size: 20))
+                .frame(width: 30)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .foregroundColor(.white)
+                    .font(.system(size: 15, weight: .bold))
+                Text(subtitle)
+                    .foregroundColor(.gray)
+                    .font(.system(size: 12))
+            }
+            
+            Spacer()
+            
+            if hasArrow {
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 12, weight: .bold))
+            }
+        }
+        .padding(16)
+        .background(Color.white.opacity(0.05))
+        .cornerRadius(16)
+    }
+}
+
+
+struct AnimatedHyperBackdrop: View {
+    @State private var animate = false
+    var body: some View {
+        GeometryReader { proxy in
+            ZStack {
+                Color.black.ignoresSafeArea()
+                Circle()
+                    .fill(Color.cyan.opacity(0.12))
+                    .frame(width: 280, height: 280)
+                    .blur(radius: 70)
+                    .offset(x: animate ? 120 : -120, y: -proxy.size.height * 0.23)
+                Circle()
+                    .fill(Color.purple.opacity(0.08))
+                    .frame(width: 260, height: 260)
+                    .blur(radius: 80)
+                    .offset(x: animate ? -100 : 100, y: proxy.size.height * 0.22)
+            }
+            .onAppear {
+                withAnimation(.easeInOut(duration: 7).repeatForever(autoreverses: true)) { animate = true }
+            }
+        }
+        .ignoresSafeArea()
+    }
+}
+
+struct DNSSectionView: View {
+    let title: String
+    @State private var dnsURL: URL?
+    @ObservedObject private var server = ProfileServer.shared
+    @State private var isVPNActive = false
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Rectangle()
+                    .fill(Color.cyan)
+                    .frame(width: 3, height: 16)
+                    .cornerRadius(1.5)
+                
+                Text(title)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundColor(.white)
+                
+                Spacer()
+            }
+            .padding(.horizontal, 24)
+            
+            // DNS 4.0 Action
+            Button(action: installDNS) {
+                HStack(spacing: 16) {
+                    Image(systemName: "shield.fill")
+                        .foregroundColor(.cyan)
+                        .font(.system(size: 24))
+                        .frame(width: 40)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("DNS AntiBan 4.0")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(.white)
+                        Text(isVPNActive ? "Đang hoạt động (VPN Bật)" : "Bấm để cài & bật")
+                            .font(.system(size: 10))
+                            .foregroundColor(isVPNActive ? .green : .gray)
+                    }
+                    
+                    Spacer()
+                    
+                    Image(systemName: isVPNActive ? "checkmark.circle.fill" : "circle")
+                        .foregroundColor(isVPNActive ? .green : .gray.opacity(0.5))
+                        .font(.system(size: 24))
+                }
+                .padding()
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(16)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(isVPNActive ? Color.green.opacity(0.3) : Color.cyan.opacity(0.2), lineWidth: 1)
+                )
+            }
+            .padding(.horizontal, 20)
+        }
+        .onAppear {
+            let fm = FileManager.default
+            if let bundlePath = Bundle.main.resourcePath {
+                let dnsPath = bundlePath + "/dns"
+                if let files = try? fm.contentsOfDirectory(atPath: dnsPath) {
+                    if let profile = files.first(where: { $0.hasSuffix(".mobileconfig") }) {
+                        dnsURL = URL(fileURLWithPath: dnsPath + "/" + profile)
+                        server.startServer(with: dnsURL!)
+                    }
+                }
+            }
+            checkVPNStatus()
+        }
+        .onReceive(Timer.publish(every: 1.5, on: .main, in: .common).autoconnect()) { _ in
+            checkVPNStatus()
+        }
+    }
+    
+    private func installDNS() {
+        if let url = server.serverURL {
+            UIApplication.shared.open(url)
+        } else if let localURL = dnsURL {
+            server.startServer(with: localURL)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if let url = server.serverURL {
+                    UIApplication.shared.open(url)
+                }
+            }
+        }
+    }
+    
+    private func checkVPNStatus() {
+        if let dict = CFNetworkCopySystemProxySettings()?.takeRetainedValue() as? [String: Any],
+           let scoped = dict["__SCOPED__"] as? [String: Any] {
+            for key in scoped.keys {
+                let lower = key.lowercased()
+                if lower.contains("tap") || lower.contains("tun") || lower.contains("ppp") || lower.contains("ipsec") {
+                    self.isVPNActive = true
+                    return
+                }
+            }
+        }
+        self.isVPNActive = false
+    }
+}
+
+struct CommunityCard: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Community & Support")
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
+            
+            Link(destination: URL(string: "https://zalo.me/g/pqwgoje0r5fnqylcw9y0")!) {
+                HStack {
+                    Image(systemName: "bell.badge.fill")
+                    Text("C?ng d?ng th�ng b�o c?p nh?t")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(12)
+            }
+            
+            Link(destination: URL(string: "https://zalo.me/0967467242")!) {
+                HStack {
+                    Image(systemName: "person.crop.circle.fill")
+                    Text("Zalo Admin")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.purple)
+                .cornerRadius(12)
+            }
+        }
+        .padding()
+        .background(Color.black.opacity(0.3))
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Color.white.opacity(0.15), lineWidth: 1))
+    }
+}
