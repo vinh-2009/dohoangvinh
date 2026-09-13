@@ -10,7 +10,7 @@ Build settings from command line:
 --- xcodebuild: WARNING: Using the first of multiple matching destinations:
 { platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
 { platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
-{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:a0fef81894eff66cd80e1550f62619d6bab74d4e, name:My Mac }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:fff6ef1758e97a589e84d1b7de7d7cad96bc51a4, name:My Mac }
 { platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:3F853DC5-005E-4601-ACD8-6DADCBC2DEBC, OS:26.2, name:Apple Vision Pro }
 { platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:BEBDC056-2028-499A-A128-A4346BD64217, OS:26.4.1, name:Apple Vision Pro }
 { platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:70D84F7E-3446-4AFC-82DC-7AC727F31257, OS:26.5, name:Apple Vision Pro }
@@ -114,8 +114,8 @@ ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/X
 
 ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
 
-Build description signature: 2b639e0679262e55238fd5f82f4d2d96
-Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/XCBuildData/2b639e0679262e55238fd5f82f4d2d96.xcbuilddata
+Build description signature: 062571d44821c37174d6a988732c975f
+Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/XCBuildData/062571d44821c37174d6a988732c975f.xcbuilddata
 CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation
     cd /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive.xcodeproj
     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation
@@ -222,13 +222,13 @@ MkDir /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakp
     cd /Users/runner/work/dohoangvinh/dohoangvinh
     /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/InstallationBuildProductsLocation/Applications/OGIOS.app
 
-MkDir /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_output/unthinned (in target 'OGIOS' from project 'ThreeOneOSFive')
-    cd /Users/runner/work/dohoangvinh/dohoangvinh
-    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_output/unthinned
-
 MkDir /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_output/thinned (in target 'OGIOS' from project 'ThreeOneOSFive')
     cd /Users/runner/work/dohoangvinh/dohoangvinh
     /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_output/thinned
+
+MkDir /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_output/unthinned (in target 'OGIOS' from project 'ThreeOneOSFive')
+    cd /Users/runner/work/dohoangvinh/dohoangvinh
+    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/ThreeOneOSFive-gfwwzaakpyztkfcwhjgqewenjxvk/Build/Intermediates.noindex/ArchiveIntermediates/OGIOS/IntermediateBuildFilesPath/ThreeOneOSFive.build/Release-iphoneos/OGIOS.build/assetcatalog_output/unthinned
 
 GenerateAssetSymbols /Users/runner/work/dohoangvinh/dohoangvinh/ThreeOneOSFive/Assets.xcassets (in target 'OGIOS' from project 'ThreeOneOSFive')
     cd /Users/runner/work/dohoangvinh/dohoangvinh
